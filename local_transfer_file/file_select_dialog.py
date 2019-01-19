@@ -37,7 +37,7 @@ class FileSelectQtWidget(QMainWindow):
         QMessageBox.information(self, "软件说明", "1. 需要手机和电脑在一个网络中，wifi同处一个网段中。\n 2. 尽量不要分享文件夹\n 3. 注意保护个人隐私，造成的法律后果由使用者承担\n 4. 仅供学习使用，请勿商用")
 
     def sotfwareVersion(self):
-        QMessageBox.information(self, "软件版本", "版本号：0.0.1")
+        QMessageBox.information(self, "软件版本", "版本号：0.0.2")
 
     def aboutMe(self):
         QMessageBox.information(self, "关于", "一个会点编程的小蚂蚁")

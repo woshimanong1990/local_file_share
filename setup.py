@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="local_transfer_file",
-    version="0.0.1",
+    version="0.0.2",
     keywords=("local transfer file", "qr code"),
     description="local transfer file",
     long_description="eds sdk for python",
