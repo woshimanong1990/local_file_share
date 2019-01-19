@@ -24,9 +24,9 @@ background-image: url(:/img/background.jpeg);
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>41</x>
-      <y>11</y>
-      <width>731</width>
+      <x>40</x>
+      <y>12</y>
+      <width>741</width>
       <height>531</height>
      </rect>
     </property>
@@ -47,7 +47,7 @@ background-image: url(:/img/background.jpeg);
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QRadioButton" name="radioButton">
+        <widget class="QRadioButton" name="fileMode">
          <property name="styleSheet">
           <string notr="true">font:24pt &quot;Microsoft YaHei UI&quot;;
 color:rgba(55,152,251,1);
@@ -66,7 +66,7 @@ line-height:67px;</string>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_2">
+        <widget class="QRadioButton" name="directorMode">
          <property name="styleSheet">
           <string notr="true">font:24pt &quot;Microsoft YaHei UI&quot;;
 color:rgba(55,152,251,1);
@@ -112,7 +112,7 @@ line-height:67px;</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="showFilePath"/>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton">
@@ -148,6 +148,9 @@ border-radius:10px;</string>
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="showUrlText"/>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -215,14 +218,6 @@ border-radius:15px;</string>
      </item>
     </layout>
    </widget>
-   <zorder>label</zorder>
-   <zorder>lineEdit</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder></zorder>
-   <zorder>radioButton</zorder>
-   <zorder>radioButton_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -233,8 +228,32 @@ border-radius:15px;</string>
      <height>23</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
+   </widget>
+   <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>软件说明</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>软件版本</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="resource.qrc"/>
