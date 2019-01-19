@@ -8,6 +8,9 @@ from local_transfer_file.file_select_dialog import FileSelectQtWidget
 from local_transfer_file.run_server_thread import CustomServerThread
 
 from local_transfer_file.utils import get_local_ip, setup_logging
+# pyinstaller import
+import local_transfer_file.service
+import local_transfer_file.ui_files
 
 
 def main():

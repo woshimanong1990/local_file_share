@@ -9,6 +9,7 @@ import os
 import logging
 import logging.config
 import json
+import sys
 
 import psutil
 
@@ -42,7 +43,14 @@ def setup_logging(
 
     """
     if default_path is None:
-        default_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logging.json")
+        if getattr(sys, 'frozen', False):
+            bundle_dir = sys._MEIPASS
+            default_path = os.path.join(bundle_dir, "logging.json")
+        else:
+            bundle_dir = os.path.dirname(os.path.abspath(__file__))
+
+            default_path = os.path.join(bundle_dir, "logging.json")
+        # default_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logging.json")
     path = default_path
     value = os.getenv(env_key, None)
     if value:

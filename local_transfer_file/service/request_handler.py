@@ -13,8 +13,14 @@ import io
 
 from http.server import SimpleHTTPRequestHandler, HTTPStatus
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-config_file = os.path.join(current_dir, "config.json")
+if getattr(sys, 'frozen', False):
+    bundle_dir = sys._MEIPASS
+    config_file = os.path.join(bundle_dir, "config.json")
+else:
+    bundle_dir = os.path.dirname(os.path.abspath(__file__))
+
+    config_file = os.path.join(bundle_dir, "config.json")
+
 logger = logging.getLogger()
 
 
@@ -178,7 +184,7 @@ class CustomRequestHanlder(SimpleHTTPRequestHandler):
             if os.path.isdir(path):
                 if not path.endswith("/"):
                     path += "/"
-                    f = self.list_directory(path)
+                f = self.list_directory(path)
             else:
                 f = self.get_file(path)
             if f:

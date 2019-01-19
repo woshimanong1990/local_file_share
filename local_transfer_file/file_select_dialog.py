@@ -6,6 +6,7 @@ import os
 import json
 import traceback
 import logging
+import sys
 
 from PyQt5.QtWidgets import QMainWindow,  QMessageBox, QFileDialog
 import qrcode
@@ -47,8 +48,13 @@ class FileSelectQtWidget(QMainWindow):
         self.ui.action_3.triggered.connect(self.aboutMe)
 
     def set_config(self, code, file_path):
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        config_file = os.path.join(current_dir, "service/config.json")
+        if getattr(sys, 'frozen', False):
+            bundle_dir = sys._MEIPASS
+            config_file = os.path.join(bundle_dir, "config.json")
+        else:
+            bundle_dir = os.path.dirname(os.path.abspath(__file__))
+
+            config_file = os.path.join(bundle_dir, "service/config.json")
         data = {
                 "file_path": file_path,
                 "code": code
@@ -124,6 +130,7 @@ class FileSelectQtWidget(QMainWindow):
         if self.file_mode == FileMode.DIRECTORMODE:
             QMessageBox.warning(self, "警告", "出于安全考虑，请尽量不要分享文件夹，可以打包后分享或者下载！")
         self.ui.showFilePath.clear()
+        self.ui.showUrlText.clear()
 
     def setShowAgain(self, isNotShowAgain):
         self.need_show_again = not isNotShowAgain
