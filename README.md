@@ -9,7 +9,7 @@
 # 安装
 点击main.exe 运行
 
-下载[local_file_share.zip](https://github.com/woshimanong1990/local_file_share/releases/download/v0.0.1/local_transfer_file.zip "download link"). 
+下载[local_file_share.zip](https://github.com/woshimanong1990/local_file_share/releases "download link"). 
 
 # 原理
 1 pc端开启一个服务(simplehttpserver)，用户设定下载的文件，pc端收到请求时验证
@@ -21,6 +21,8 @@
     Pyqt5
 
     qrcode
+    
+    psutil
 
 
 # 注意事项
