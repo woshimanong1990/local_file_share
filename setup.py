@@ -22,7 +22,8 @@ setup(
     platforms="any",
     install_requires=[
         "PyQt5",
-        "qrcode"
+        "qrcode",
+        "psutil"
     ],
 
     scripts=[],
